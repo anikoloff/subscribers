@@ -4,11 +4,13 @@ Sample application to add and view subscriber information.
 Features:
 1. Add new subscribers (without creating duplicates based on email address).
 2. List all the subscribers that are currently in the system.
+3. Export a csv file of subscriber contact data filtered by sign up time.
 
 **Technologies used:**
 
-TypeScript, Node.js, PostgreSQL, Docker
+TypeScript, React, Bootstrap, Node.js, PostgreSQL, Docker
 
+## Start the Application
 
 **Start the server:**
 
@@ -18,9 +20,9 @@ TypeScript, Node.js, PostgreSQL, Docker
 
 `docker-compose up`
 
-**Test getting and creating constituents:**
+**Test getting and creating subscribers:**
 
-`GET /subscribers?page=1&limit=20`
+`GET /subscribers`
 
 `POST /subscribers`
 
@@ -35,13 +37,24 @@ example body:
 
 Try creating entries with duplicate email addresses or missing parameters.
 
+
+**Start the ui:**
+
+`cd frontend/subscribers`
+
+`npm run dev`
+
+The app will be running at localhost:5173
+
+**Test getting, creating, and exporting subscribers:**
+
+Use the navigation bar to create new subscribers and view and export the list of subscribers sorted by subscription date.
+
 ## NOTES
 
 Further work:
 
-- add frontend
-- add more validation checks
 - add tests
-
-Additional features:
+- add error and loading components
+- add more validation checks
 - add authentication
